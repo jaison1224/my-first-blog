@@ -2,7 +2,58 @@
     <head>
         <title>Blog Django Girls</title>
     </head>
+	<style>
+	
+
+	
+	
+	li{
+		display: inline-flex;
+		
+	}
+	.top{
+		border: 0.9px solid orange;
+		background: black;
+		}
+	
+	.link a{
+		padding: 10px;
+		text-decoration: none;
+		color: red;
+		border: 0.6px solid Red;
+		}
+	.link a:hover{
+		padding: 10px;
+		text-decoration: none;
+		color: violet;
+		border: 0.6px solid violet;
+		
+		
+		}
+	.logo {
+		color: red;
+		float: right;
+		padding: 10px;
+	}
+	</style>
     <body>
-        <H1> CRIADO POR JAISON DO VALE<H1>
+		<header class="top">
+			<ul >
+				<li class="link"><a  href="#"> Inicial</a></li>
+				<li class="link"><a  href="#"> Contato</a></li>
+				<li class="logo" > Desenvolvido por Jaison Vale</li>
+			</ul>
+		</header>
+        <div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
